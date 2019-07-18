@@ -1,0 +1,48 @@
+@CHARSET "ISO-8859-1";
+
+.background{
+	background-image: url("../image/loginBg.jpg");
+ 	background-size: cover; 
+	width:95%;
+	background-repeat: no-repeat; 
+}
+
+.fieldsetsize{
+	width: 400px;
+	height: 200px;	
+	background: rgba(0,0,0,0.5);
+	margin: 15% 38% 10% 35%;
+}
+
+.textclr{
+	color: #ffffff;
+	font-size: 25px;
+}
+
+.buttonSize{
+	border: none;
+	outline: none;
+	height: 40px;
+	width: 150px;
+	font-size: 20px;
+	border-radius: 15px;
+	color: #ffffff;
+	background: #18a2f3;
+	margin-top: 10px;
+}
+
+.center{
+	text-align: center;
+	margin-top: 30px;
+}
+
+.fullSize{
+	height : 35px;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ffffff;
+	background: transparent;
+	border-radius: 10px;
+	color: #ffffff;
+	margin-top: 10px;
+}

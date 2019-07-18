@@ -1,0 +1,89 @@
+@CHARSET "ISO-8859-1";
+
+.rightDiv{
+	float: right;
+}
+.ulList{
+	list-style: none;
+}
+.border{
+	border: 0.5px solid #000000;
+}
+.navTextColor{
+	color: #ffffff;
+}
+.backgroundColor:HOVER{
+	background-color: #ff0080;
+}
+.hideList{
+	display: none;
+}
+.showList:HOVER ul li{
+	display: block;
+}
+
+
+
+.fullSize{
+	margin-top : 10px;
+	margin-right : 10px;
+	border-radius: 25px;
+	background: #000000;
+	color : #FFFFFF;
+	border-radius: 25px;
+	font-size : 15px;
+	width: 200px;
+	height : 30px;
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	radius : 2px;
+}
+
+.fullSize1{
+	margin-top : 10px;
+	margin-right : 10px;
+	border-radius: 25px;
+	background: #000000;
+	color : #FFFFFF;
+	border-radius: 25px;
+	font-size : 15px;
+	width : 100px;
+	float: right;
+	line-height: 30px;
+	text-align: center;
+}
+
+.fullSize2{
+	margin-top : 10px;
+	margin-right : 10px;
+	border-radius: 25px;
+	background: #000000;
+	color : #FFFFFF;
+	border-radius: 25px;
+	font-size : 15px;
+	width : 100px;
+	height : 35px;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+}
+
+.marginRight{
+	float: left;
+}
+
+.hoverColor:HOVER{
+	background-color: #ff0080;
+}
+.fullSize:HOVER {
+	background-color: #ff0080;
+}
+
+.fullSize1:HOVER {
+	background-color: #ff0080;
+}
+
+.whiteColor{
+	color: #ffffff;
+}

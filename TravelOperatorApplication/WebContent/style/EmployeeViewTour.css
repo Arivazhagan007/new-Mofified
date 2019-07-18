@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+
+tr, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 6px;
+}
+th ,td{
+	text-align: center;
+}
+
+.btSize{
+	border-radius: 10px;
+	background-color: #3fe0ed;
+}
