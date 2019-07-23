@@ -46,3 +46,22 @@
 	color: #ffffff;
 	margin-top: 10px;
 }
+
+tr, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 6px;
+}
+th ,td{
+	text-align: center;
+}
+.divbgclr{
+	background: rgba(0,0,0,0.5);
+	color: #ffffff;	
+}

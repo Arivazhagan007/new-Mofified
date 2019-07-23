@@ -22,7 +22,7 @@
 				data: form,
 				type: 'POST', 
 				success: function(uri){ 
-				location.href = "EmployeeHome.jsp"
+				location.href = "EmployeeHome.action"
 				},
 				error: function(xhr,status,error){
 				alert('please check Your UserName and PassWord');

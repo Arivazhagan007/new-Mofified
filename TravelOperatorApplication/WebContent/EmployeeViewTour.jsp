@@ -10,7 +10,8 @@
 <link type="text/css" rel="stylesheet" href="style/EmployeeViewTour.css">
 </head>
 <body>
-<form action="UpdateTour.jsp" method="post">
+
+<form action="GetUpdateTour.in" method="post">
 	<table>
 		<tr>
 			<!-- <th>Tour Id</th> -->
@@ -24,11 +25,7 @@
 			<th>Amount Per Person</th>
 			<th>Action</th>
 		</tr>
-		<%-- <%
-			ViewTour viewTour = new ViewTour();
-			List<Tour> tourList = viewTour.showTour();
-			request.setAttribute("LIST_TOUR", tourList);
-		%> --%>
+		
 		
 		<%-- <c:url var="tourId" value="${tourList.tourId}"/>
 			 --%>
@@ -37,13 +34,13 @@
 		<%-- 
 		<c:url var="delete" value="DeleteTour.in">
 			<c:param name="tourId" value="${tourList.tourId}"/>
-		</c:url>
-		
-		<c:url var="update" value="UpdateTour.jsp">
-			<c:param name="updateList" value="${tourList}"/>
-			<c:set var="updateList" value="${tourList}" scope="session"/>
 		</c:url> --%>
-		<c:set var="updateList" value="${tourList}" scope="session"/>
+		
+	<%-- 	<c:url var="update" value="GetUpdateTour.in">
+			<c:param name="tourId" value="${tourList.tourId}"/>
+		</c:url> --%>
+		
+		<%-- <c:set var="updateList" value="${tourList}" scope="session"/> --%>
 			<tr>
 				<%-- <td>${tourList.tourId}</td> --%>
 				<td>${tourList.tourCode}</td>
@@ -58,7 +55,7 @@
 				<a href="${delete}" 
 				onclick="if (!(confirm('Are you sure you want to delete this ${tourList.tourCode}')))
 				 return false"><button class="btSize">Delete</button></a></td> --%>
-				<td><input type="submit" value="Update"></td>	
+				 <td><button class="btSize" name="tourId" value="${tourList.tourId}">Update</button></td>
 			</tr>
 		</c:forEach>
 	</table>

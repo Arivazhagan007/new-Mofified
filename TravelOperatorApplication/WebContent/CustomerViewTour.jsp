@@ -10,6 +10,7 @@
 <link type="text/css" rel="stylesheet" href="style/ViewTour.css">
 </head>
 <body>
+<form action="BookTour.in" method="post">
 <table>
 <tr>
 	<!-- <th>Tour Id</th> -->
@@ -23,23 +24,12 @@
 	<th>Amount Per Person</th>
 	<th>Action</th>
 </tr>
-<%--  <%
-	ViewTour viewTour = new ViewTour();
-	List<Tour> tourList = viewTour.showTour();
-	request.setAttribute("LIST_TOUR", tourList); 
-%> --%>
-
-
-
-<%-- <jsp:useBean id="LIST_TOUR" class="com.training.process.SearchTour" scope="page"/> --%>
-
 <c:forEach var="tourList" items="${requestScope.list}">
-<c:url var="book" value="BookTour.jsp">
+<%-- <c:url var="book" value="BookTour.jsp">
 	<c:param name="bookId" value="${tourList.tourId}"/>
 	<c:param name="bookTour" value="${tourList.amountPerPerson}"/>
 	<c:set var="tourIdValue" value="${bookId}" scope="session"/>
-</c:url>
-
+</c:url> --%>
 	<tr>
 		<%-- <td>${tourList.tourId}</td> --%>
 		<td>${tourList.tourCode}</td>
@@ -50,11 +40,13 @@
 		<td>${tourList.endingDate}</td>
 		<td>${tourList.placesCovered}</td>
 		<td>${tourList.amountPerPerson1}</td>
-		<td><a href="${book}"><button>Book</button></a></td>
+		
+		<td><button name="bookTourId" value="${tourList.tourId}">Book</button></td>
 			
 	</tr>
 </c:forEach>
 
 </table>
+</form>
 </body>
 </html>

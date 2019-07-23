@@ -12,14 +12,14 @@
 	<ul class="ulList">
 		<li class="ulliList border backgroundColor showList"><a>Login</a>
 			<ul class="ulList">
-				<li class="ulliList hideList backgroundColor"><a href="CustomerLoginView.in">User Login</a></li>
-				<li class="ulliList hideList backgroundColor"><a href="EmployeeLoginView.in">Employee Login</a></li>
+				<li class="ulliList hideList backgroundColor"><a href="CustomerLoginView.action">User Login</a></li>
+				<li class="ulliList hideList backgroundColor"><a href="EmployeeLoginView.action">Employee Login</a></li>
 			</ul>
 		</li>
 		<li class="ulliList border backgroundColor showList"><a>Register</a>
 			<ul class="ulList ">
-				<li class="ulliList hideList backgroundColor"><a href="CustomerRegisterView.in">User Register</a></li>
-				<li class="ulliList hideList backgroundColor"><a href="EmployeeRegisterView.in">Employee Register</a></li>
+				<li class="ulliList hideList backgroundColor"><a href="CustomerRegisterView.action">User Register</a></li>
+				<li class="ulliList hideList backgroundColor"><a href="EmployeeRegisterView.action">Employee Register</a></li>
 			</ul>
 		</li>
 	</ul>

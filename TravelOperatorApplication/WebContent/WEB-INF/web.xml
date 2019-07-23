@@ -24,6 +24,7 @@
   <servlet-mapping>
     <servlet-name>TravelController</servlet-name>
     <url-pattern>*.in</url-pattern>
+    <url-pattern>*.action</url-pattern>
   </servlet-mapping>
 
 <error-page>

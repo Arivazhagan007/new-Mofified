@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 <body>
 <header>
 <fieldset class="headerColor indexpage">
-<a href="home.jsp"><img alt="Logo" src="image/headerLogo.jpg" class="headerLogo"></a>
+<a href="Home.action"><img alt="Logo" src="image/headerLogo.jpg" class="headerLogo"></a>
 <h1 class="headerCenter">Hamster Travels</h1>
 </fieldset>
 </header>

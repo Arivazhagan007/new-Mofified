@@ -20,11 +20,11 @@
 	</div>
 	<div class="registerPadding">
 		<label for="phoneNumber" class="txtColorWhite">Phone Number</label>
-		<input type="text" name="phoneNumber" id="phoneNumber" required="required" placeholder="Enter the Phone Number" class="fullSize"/>
+		<input type="text" name="phoneNumber" id="phoneNumber" pattern="[6-9]{1}[0-9]{9}"  required="required" placeholder="Enter the Phone Number" class="fullSize"/>
 	</div>
 	<div class="registerPadding">
 		<label for="userName" class="txtColorWhite">User Name</label>
-		<input type="text" name="userName" id="userName" required="required" placeholder="Enter the UserName" class="fullSize"/>
+		<input type="text" name="userName" id="userName" required="required" pattern="[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$"  placeholder="Enter the UserName" class="fullSize"/>
 	</div>
 	<div class="registerPadding paddingBottom">
 		<label for="passWord" class="txtColorWhite">Password</label>

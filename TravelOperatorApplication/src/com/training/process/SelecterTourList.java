@@ -16,28 +16,26 @@ import com.training.iface.Command;
 import com.training.iface.TravelConstant;
 import com.training.model.Tour;
 
-public class SearchTour implements Command {
+public class SelecterTourList implements Command {
 
 	@Override
-	public Map<String, Object> execute(Map<String, String> map) {	
-		String uri = "CustomerHome.jsp";
-		Map<String, Object> map2 = new HashMap<>();
-		map2.put(TravelConstant.uriPath, uri);
-		
-		String source = map.get("sourcePlace");
-		String destination = map.get("destinationPlace");
-		
-		List<Tour> list = new ArrayList<>();
+	public Map<String, Object> execute(Map<String, String> map) {
+		String id = map.get("bookTourId");
+		Integer tourId = Integer.parseInt(id);
 		Connection con = SqlConnection.getSqlConnection();
-		String sql = "select * from Tour where boardingPlace=? AND destinationPlace=?";
+		Map<String, Object> map2 = new HashMap<>();
+		String uri = "BookTour.jsp";
+		map2.put(TravelConstant.uriPath, uri);
+		List<Tour> list = new ArrayList<>();
+		String sql = "Select * from Tour where tourId=?";
 		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
 		try {
 			preparedStatement = con.prepareStatement(sql);
-			preparedStatement.setString(1, source);
-			preparedStatement.setString(2, destination);
-			ResultSet resultSet = preparedStatement.executeQuery();
-			while (resultSet.next()) {
-				int tourId = resultSet.getInt("tourId");
+			preparedStatement.setInt(1, tourId);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				int tourId1 = resultSet.getInt("tourId");
 				String tourCode = resultSet.getString("tourCode");
 				String tourName = resultSet.getString("tourName");
 				String boardingPlace = resultSet.getString("boardingPlace");
@@ -51,15 +49,16 @@ public class SearchTour implements Command {
 				double amountPerPerson = resultSet.getDouble("amountPerPerson");
 				DecimalFormat decimalFormat = new DecimalFormat("##,##,##,##,###.00");
 				String amountPerPerson1 = decimalFormat.format(amountPerPerson);
-				Tour tour = new Tour(tourId, tourCode, tourName, boardingPlace, destinationPlace, startingDate, endingDate, fromDate, toDate, placesCovered, amountPerPerson,amountPerPerson1);
+				Tour tour = new Tour(tourId1, tourCode, tourName, boardingPlace, destinationPlace, startingDate, endingDate, fromDate, toDate, placesCovered, amountPerPerson,amountPerPerson1);
 				list.add(tour);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {	
+		}finally {
 			try {
 				preparedStatement.close();
 				con.close();
+				resultSet.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -67,4 +66,5 @@ public class SearchTour implements Command {
 		map2.put(TravelConstant.list, list);
 		return map2;
 	}
+
 }

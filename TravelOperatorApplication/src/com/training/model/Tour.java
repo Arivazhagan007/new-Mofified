@@ -16,6 +16,7 @@ public class Tour {
 	private String placesCovered;
 	private double amountPerPerson;
 	private String amountPerPerson1;
+	private int employeeId;
 	
 	public Tour() {
 		super();
@@ -35,7 +36,7 @@ public class Tour {
 		this.amountPerPerson = amountPerPerson;
 	}
 	public Tour(String tourCode, String tourName, String boardingPlace, String destinationPlace, String startingDate,
-			String endingDate, String placesCovered, double amountPerPerson) {
+			String endingDate, String placesCovered, double amountPerPerson, int employeeId) {
 		super();
 		this.tourCode = tourCode;
 		this.tourName = tourName;
@@ -45,6 +46,7 @@ public class Tour {
 		this.endingDate = endingDate;
 		this.placesCovered = placesCovered;
 		this.amountPerPerson = amountPerPerson;
+		this.employeeId = employeeId;
 	}
 	
 	public Tour(int tourId, String tourCode, String tourName, String boardingPlace, String destinationPlace,
@@ -98,6 +100,7 @@ public class Tour {
 		this.amountPerPerson = amountPerPerson;
 		this.amountPerPerson1 = amountPerPerson1;
 	}
+	
 	public int getTourId() {
 		return tourId;
 	}
@@ -171,121 +174,20 @@ public class Tour {
 	public void setAmountPerPerson1(String amountPerPerson1) {
 		this.amountPerPerson1 = amountPerPerson1;
 	}
+	
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
 	@Override
 	public String toString() {
 		return "Tour [tourId=" + tourId + ", tourCode=" + tourCode + ", tourName=" + tourName + ", boardingPlace="
 				+ boardingPlace + ", destinationPlace=" + destinationPlace + ", startingDate1=" + startingDate1
 				+ ", endingDate1=" + endingDate1 + ", startingDate=" + startingDate + ", endingDate=" + endingDate
 				+ ", placesCovered=" + placesCovered + ", amountPerPerson=" + amountPerPerson + ", amountPerPerson1="
-				+ amountPerPerson1 + "]";
+				+ amountPerPerson1 + ", employeeId=" + employeeId + "]";
 	}
-	
-	
-	
-	
-//	@Override
-//	public String toString() {
-//		return "Tour [tourId=" + tourId + ", tourCode=" + tourCode + ", tourName=" + tourName + ", boardingPlace="
-//				+ boardingPlace + ", destinationPlace=" + destinationPlace + ", startingDate1=" + startingDate1
-//				+ ", endingDate1=" + endingDate1 + ", startingDate=" + startingDate + ", endingDate=" + endingDate
-//				+ ", placesCovered=" + placesCovered + ", amountPerPerson=" + amountPerPerson + "]";
-//	}
-	
-	
-	
-//	@Override
-//	public String toString() {
-//		return "Tour [tourId=" + tourId + ", tourCode=" + tourCode + ", tourName=" + tourName + ", boardingPlace="
-//				+ boardingPlace + ", destinationPlace=" + destinationPlace + ", startingDate=" + startingDate
-//				+ ", endingDate=" + endingDate + ", placesCovered=" + placesCovered + ", amountPerPerson="
-//				+ amountPerPerson + "]";
-//	}
-	
-//	public Tour(String tourCode, String tourName, String boardingPlace, String destinationPlace, LocalDate startingDate,
-//			LocalDate endingDate, String placesCovered, double amountPerPerson) {
-//		super();
-//		this.tourCode = tourCode;
-//		this.tourName = tourName;
-//		this.boardingPlace = boardingPlace;
-//		this.destinationPlace = destinationPlace;
-//		this.startingDate = startingDate;
-//		this.endingDate = endingDate;
-//		this.placesCovered = placesCovered;
-//		this.amountPerPerson = amountPerPerson;
-//	}
-//	public Tour(int tourId, String tourCode, String tourName, String boardingPlace, String destinationPlace,
-//			LocalDate startingDate, LocalDate endingDate, String placesCovered, double amountPerPerson) {
-//		super();
-//		this.tourId = tourId;
-//		this.tourCode = tourCode;
-//		this.tourName = tourName;
-//		this.boardingPlace = boardingPlace;
-//		this.destinationPlace = destinationPlace;
-//		this.startingDate = startingDate;
-//		this.endingDate = endingDate;
-//		this.placesCovered = placesCovered;
-//		this.amountPerPerson = amountPerPerson;
-//	}
-//	public int getTourId() {
-//		return tourId;
-//	}
-//	public void setTourId(int tourId) {
-//		this.tourId = tourId;
-//	}
-//	public String getTourCode() {
-//		return tourCode;
-//	}
-//	public void setTourCode(String tourCode) {
-//		this.tourCode = tourCode;
-//	}
-//	public String getTourName() {
-//		return tourName;
-//	}
-//	public void setTourName(String tourName) {
-//		this.tourName = tourName;
-//	}
-//	public String getBoardingPlace() {
-//		return boardingPlace;
-//	}
-//	public void setBoardingPlace(String boardingPlace) {
-//		this.boardingPlace = boardingPlace;
-//	}
-//	public String getDestinationPlace() {
-//		return destinationPlace;
-//	}
-//	public void setDestinationPlace(String destinationPlace) {
-//		this.destinationPlace = destinationPlace;
-//	}
-//	public LocalDate getStartingDate() {
-//		return startingDate;
-//	}
-//	public void setStartingDate(LocalDate startingDate) {
-//		this.startingDate = startingDate;
-//	}
-//	public LocalDate getEndingDate() {
-//		return endingDate;
-//	}
-//	public void setEndingDate(LocalDate endingDate) {
-//		this.endingDate = endingDate;
-//	}
-//	public String getPlacesCovered() {
-//		return placesCovered;
-//	}
-//	public void setPlacesCovered(String placesCovered) {
-//		this.placesCovered = placesCovered;
-//	}
-//	public double getAmountPerPerson() {
-//		return amountPerPerson;
-//	}
-//	public void setAmountPerPerson(double amountPerPerson) {
-//		this.amountPerPerson = amountPerPerson;
-//	}
-//	@Override
-//	public String toString() {
-//		return "Tour [tourId=" + tourId + ", tourCode=" + tourCode + ", tourName=" + tourName + ", boardingPlace="
-//				+ boardingPlace + ", destinationPlace=" + destinationPlace + ", startingDate=" + startingDate
-//				+ ", endingDate=" + endingDate + ", placesCovered=" + placesCovered + ", amountPerPerson="
-//				+ amountPerPerson + "]";
-//	}
 	
 }

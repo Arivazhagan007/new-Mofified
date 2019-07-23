@@ -33,9 +33,11 @@ public class CustomerLogin implements Command{
 			validatePreparedStatement.setString(2, customer.getPassWord());
 			ResultSet rs=validatePreparedStatement.executeQuery();
 			if(rs.next()){
+				customer.setCustomerId(rs.getInt("customerId"));
+				String name = rs.getString("customerName");
+				map2.put(TravelConstant.userName, name);
 				uri= "CustomerHome.jsp";
 			}
-			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,71 +52,4 @@ public class CustomerLogin implements Command{
 		map2.put(TravelConstant.uriPath, uri);
 		return map2;
 	}
-	
-	
-	//	Connection con = null;
-//	public CustomerLogin() {
-//		super();
-//		con = SqlConnection.getSqlConnection();
-//	}
-//	
-
-//	@Override
-//	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//		String result = "index.jsp";
-//		String userName = request.getParameter("userName");
-//		String passWord = request.getParameter("passWord");
-//		Customer customer = new Customer(userName, passWord);
-//		customerLoginValidate(customer);
-//		return result;
-//	}
-	
-//	@Override
-//	public String execute(Map<String, String> map){
-//		String result = "CustomerHome.jsp";
-//		String userName = map.get("userName");
-//		String passWord = map.get("passWord");
-//		Customer customer = new Customer(userName, passWord);
-//		customerLoginValidate(customer);
-//		return result;
-//	}
-//
-//		
-//	public boolean customerLoginValidate(Customer customer) {
-//		boolean result=false;
-//		String sql="select * from Customer where username=? AND password=?";
-//		PreparedStatement validatePreparedStatement=null;
-//		
-//		try {
-//			validatePreparedStatement=con.prepareStatement(sql);
-//			
-//			validatePreparedStatement.setString(1, customer.getUserName());
-//			validatePreparedStatement.setString(2, customer.getPassWord());
-//			
-//			ResultSet rs=validatePreparedStatement.executeQuery();
-//			if(rs.next()){
-//				result=true;
-//			}
-//			
-//		}catch (Exception e) {
-//		e.printStackTrace();
-//		}
-//		finally {
-//			try {
-//				validatePreparedStatement.close();
-//				con.close();
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		return result;
-//	}
-
-
-
-
-
-
-
 }

@@ -8,6 +8,7 @@
 <link type="text/css" rel="stylesheet" href="style/style.css">
 </head>
 <body class="tourbg">
+
 <form action="AddTour.in"  method="post">
 	<fieldset class="toursize">
 		<div>

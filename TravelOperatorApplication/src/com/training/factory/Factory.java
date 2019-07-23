@@ -13,7 +13,6 @@ public class Factory {
 				class1 = Class.forName(classPackageName);
 				command = (Command) class1.newInstance();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			

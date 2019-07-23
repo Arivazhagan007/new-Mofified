@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.training.SqlConnection;
@@ -16,28 +15,26 @@ import com.training.iface.Command;
 import com.training.iface.TravelConstant;
 import com.training.model.Tour;
 
-public class SearchTour implements Command {
+public class GetUpdateTour implements Command {
 
 	@Override
-	public Map<String, Object> execute(Map<String, String> map) {	
-		String uri = "CustomerHome.jsp";
+	public Map<String, Object> execute(Map<String, String> map) {
 		Map<String, Object> map2 = new HashMap<>();
-		map2.put(TravelConstant.uriPath, uri);
-		
-		String source = map.get("sourcePlace");
-		String destination = map.get("destinationPlace");
-		
-		List<Tour> list = new ArrayList<>();
+		ArrayList<Tour> list = new ArrayList<>();
 		Connection con = SqlConnection.getSqlConnection();
-		String sql = "select * from Tour where boardingPlace=? AND destinationPlace=?";
+		String uri = "UpdateTour.jsp";
+		map2.put(TravelConstant.uriPath, uri);
+		String id = map.get("tourId");
+		Integer tourId = Integer.parseInt(id);
+		String sql = "select * from Tour where tourId=?";
 		PreparedStatement preparedStatement = null;
+		
 		try {
 			preparedStatement = con.prepareStatement(sql);
-			preparedStatement.setString(1, source);
-			preparedStatement.setString(2, destination);
-			ResultSet resultSet = preparedStatement.executeQuery();
+			preparedStatement.setInt(1, tourId);
+			ResultSet resultSet =  preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				int tourId = resultSet.getInt("tourId");
+				int tourId1 = resultSet.getInt("tourId");
 				String tourCode = resultSet.getString("tourCode");
 				String tourName = resultSet.getString("tourName");
 				String boardingPlace = resultSet.getString("boardingPlace");
@@ -51,15 +48,15 @@ public class SearchTour implements Command {
 				double amountPerPerson = resultSet.getDouble("amountPerPerson");
 				DecimalFormat decimalFormat = new DecimalFormat("##,##,##,##,###.00");
 				String amountPerPerson1 = decimalFormat.format(amountPerPerson);
-				Tour tour = new Tour(tourId, tourCode, tourName, boardingPlace, destinationPlace, startingDate, endingDate, fromDate, toDate, placesCovered, amountPerPerson,amountPerPerson1);
+				Tour tour = new Tour(tourId1, tourCode, tourName, boardingPlace, destinationPlace, startingDate, endingDate, fromDate, toDate, placesCovered, amountPerPerson,amountPerPerson1);
 				list.add(tour);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {	
+		}finally {
 			try {
-				preparedStatement.close();
 				con.close();
+				preparedStatement.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -67,4 +64,5 @@ public class SearchTour implements Command {
 		map2.put(TravelConstant.list, list);
 		return map2;
 	}
+
 }

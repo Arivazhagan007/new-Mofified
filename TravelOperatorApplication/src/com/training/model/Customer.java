@@ -2,7 +2,8 @@ package com.training.model;
 
 public class Customer {
 
-	private int customerId;
+	
+	private static int customerId;
 	private String customerName;
 	private long phoneNumber;
 	private String userName;
@@ -30,7 +31,7 @@ public class Customer {
 
 	public Customer(int customerId, String customerName, long phoneNumber, String userName, String passWord) {
 		super();
-		this.customerId = customerId;
+		Customer.customerId = customerId;
 		this.customerName = customerName;
 		this.phoneNumber = phoneNumber;
 		this.userName = userName;
@@ -41,7 +42,7 @@ public class Customer {
 		return customerId;
 	}
 	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+		Customer.customerId = customerId;
 	}
 	public String getCustomerName() {
 		return customerName;

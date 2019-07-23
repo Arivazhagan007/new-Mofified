@@ -68,34 +68,43 @@ public class TravelController extends HttpServlet {
 	
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 
-		Map<String, String> map=new HashMap<>();
-		String paramValues=null;
-		Enumeration<String> paramNames=request.getParameterNames();
-
-		while(paramNames.hasMoreElements()){
-
-		String paramName= paramNames.nextElement();
-		paramValues=request.getParameter(paramName);
-		map.put(paramName, paramValues);
-		}
-//		/TravelOperatorApplication/CustomerLogin.in
-
+		
 		String uriPath = request.getRequestURI();
 		String[] uriSplit = uriPath.split("/");
-		String classPackageName = properties.getProperty(uriSplit[uriSplit.length-1]);
-		Command command = Factory.getClass(classPackageName);
-//		String responsePath = command.execute(request,response);
-//		String responsePath = command.execute(map);
-		Map<String,Object> map1 = command.execute(map);
-		String responsePath = map1.get(TravelConstant.uriPath).toString();
-		request.setAttribute("list", map1.get(TravelConstant.list));
-		if(responsePath!=null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher(responsePath);
-			dispatcher.forward(request, response);
+		String reqPath = uriSplit[uriSplit.length-1];
+		boolean result = reqPath.endsWith(".in");
+		if(result){
+			Map<String, String> map = new HashMap<>();
+			String paramValues = null;
+			Enumeration<String> paramNames = request.getParameterNames();
+				while(paramNames.hasMoreElements()){
+				String paramName= paramNames.nextElement();
+				paramValues=request.getParameter(paramName);
+				map.put(paramName, paramValues);
+				}
+			String classPackageName = properties.getProperty(reqPath);
+			Command command = Factory.getClass(classPackageName);
+			Map<String,Object> map1 = command.execute(map);
+			String responsePath = map1.get(TravelConstant.uriPath).toString();
+			request.setAttribute("list", map1.get(TravelConstant.list));
+			HttpSession httpSession = request.getSession(); 
+				if(map1.get(TravelConstant.userName)!=null){
+					httpSession.setAttribute("userName", map1.get(TravelConstant.userName));	
+				}
+				if(responsePath!=null){
+					RequestDispatcher dispatcher = request.getRequestDispatcher(responsePath);
+					dispatcher.forward(request, response);
+				}else{
+					request.getRequestDispatcher("error").forward(request, response);
+				}
 		}else{
-			request.getRequestDispatcher("error").forward(request, response);
-		}
-	
+			String responsePath = properties.getProperty(reqPath);
+			if(responsePath!=null){
+				request.getRequestDispatcher(responsePath).forward(request, response);
+			}else{
+				request.getRequestDispatcher("error").forward(request, response);
+			}
+		}	
 	}
 
 }

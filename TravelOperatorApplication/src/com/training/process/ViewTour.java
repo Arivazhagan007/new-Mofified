@@ -14,9 +14,10 @@ import java.util.Map;
 import com.training.SqlConnection;
 import com.training.iface.Command;
 import com.training.iface.TravelConstant;
+import com.training.model.Employee;
 import com.training.model.Tour;
 
-public class ViewTour implements Command{
+public class ViewTour extends Employee implements Command{
 	
 	@Override
 	public Map<String, Object> execute(Map<String, String> map){
@@ -25,11 +26,12 @@ public class ViewTour implements Command{
 		String uri = "EmployeeHome.jsp";
 		map2.put(TravelConstant.uriPath, uri);
 		List<Tour> list = new ArrayList<>();
-		String sql = "Select * from Tour";
+		String sql = "Select * from Tour where employeeId=?";
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		try {
 			preparedStatement = con.prepareStatement(sql);
+			preparedStatement.setInt(1, super.getEmployeeId());
 			resultSet = preparedStatement.executeQuery();
 			while(resultSet.next()) {
 				int tourId = resultSet.getInt("tourId");

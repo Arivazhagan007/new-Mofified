@@ -2,7 +2,7 @@ package com.training.model;
 
 public class Employee {
 
-	private int employeeId;
+	private static int employeeId;
 	private String employeeName;
 	private long phoneNumber;
 	private String userName;
@@ -34,7 +34,7 @@ public class Employee {
 
 	public Employee(int employeeId, String employeeName, long phoneNumber, String userName, String passWord) {
 		super();
-		this.employeeId = employeeId;
+		Employee.employeeId = employeeId;
 		this.employeeName = employeeName;
 		this.phoneNumber = phoneNumber;
 		this.userName = userName;
@@ -44,7 +44,7 @@ public class Employee {
 		return employeeId;
 	}
 	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
+		Employee.employeeId = employeeId;
 	}
 	public String getEmployeeName() {
 		return employeeName;

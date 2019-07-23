@@ -1,5 +1,13 @@
 @CHARSET "ISO-8859-1";
 
+.right{
+	/* float: right; */
+	/* padding-left: 90%; */
+	padding-left: 90%;
+	padding-right : 20px;
+	padding-top: 6px;
+	padding-bottom: 0px;
+}
 .floatRight{
 	float: right;
 }

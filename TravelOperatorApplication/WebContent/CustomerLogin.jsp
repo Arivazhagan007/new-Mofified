@@ -24,7 +24,7 @@
 				data: form,
 				type: 'POST', 
 				success: function(uri){ 
-				location.href = "CustomerHome.jsp"
+				location.href = "CustomerHome.action"
 				},
 				error: function(xhr,status,error){
 				alert('please check Your UserName and PassWord');
