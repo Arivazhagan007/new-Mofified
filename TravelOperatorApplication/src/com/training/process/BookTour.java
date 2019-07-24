@@ -3,6 +3,7 @@ package com.training.process;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,8 +49,10 @@ public class BookTour extends Customer implements Command {
 				e.printStackTrace();
 			}
 		}
+		DecimalFormat decimalFormat = new DecimalFormat("##,##,##,##,###.00");
 		totalAmount = amountPerPerson*countOfMembers;
-		BookTourDetails bookTourDetails = new BookTourDetails(tourId, customerId, countOfMembers, totalAmount);
+		String amount = decimalFormat.format(totalAmount);
+		BookTourDetails bookTourDetails = new BookTourDetails(tourId, customerId, countOfMembers, totalAmount, amount);
 		list.add(bookTourDetails);
 		
 		String bookTourSql = "insert into BookTour values(?,?,?,?,?)";

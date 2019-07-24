@@ -22,6 +22,7 @@
 		<button type="submit" class="searchbtn border bgcolor"><i class="fa fa-search"></i></button>
 	</form>
 	<form action="Logout.action" method="post">
+		
 		<a class="floatRight"><button type="submit" class="loginbtn bgcolor">Logout</button></a>
 	</form>
 </div>

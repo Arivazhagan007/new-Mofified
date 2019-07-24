@@ -8,8 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Customer Home</title>
 <link type="text/css" rel="stylesheet" href="style/CustomerHome.css">
+<link type="text/css" rel="stylesheet" href="style/bg.css">
 </head>
-<body>
+<body class="homeBackgroundPic">
 
 	<div>
 		<jsp:include page="Header.jsp"/>
@@ -18,10 +19,10 @@
 	<div>
 		<jsp:include page="CustomerNavigation.jsp"/>
 	</div>
-	<div>
+	<div >
 		<jsp:include page="CustomerViewTour.jsp"/>
 	</div>
-	<div>
+	<div class="footerMarginPosition">
 		 <jsp:include page="Footer.jsp"/>
 	</div>
 </body>

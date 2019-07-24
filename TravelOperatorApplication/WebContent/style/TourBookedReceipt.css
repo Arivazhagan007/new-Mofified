@@ -7,6 +7,7 @@ tr, td, th {
 table {
   border-collapse: collapse;
   width: 100%;
+ 
 }
 th, td {
   padding: 6px;
@@ -17,4 +18,21 @@ th ,td{
 
 .aligncenter{
 	text-align: center;
+}
+
+.floatLoginRight{
+	float: right;
+	padding: 10px 0px 10px 0px;
+}
+.btnLogoutSize{
+	
+	background-color: #eabe0f;
+	width: 80px;
+	height: 30px;
+	border-radius: 10px;
+	border: 0.5px solid #000000;
+}
+
+.bookTourReciptbg{
+	background-color: #FEBE0D;
 }

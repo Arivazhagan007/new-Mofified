@@ -85,7 +85,7 @@ public class TravelController extends HttpServlet {
 			String classPackageName = properties.getProperty(reqPath);
 			Command command = Factory.getClass(classPackageName);
 			Map<String,Object> map1 = command.execute(map);
-			String responsePath = map1.get(TravelConstant.uriPath).toString();
+			String responsePath = (String) map1.get(TravelConstant.uriPath);
 			request.setAttribute("list", map1.get(TravelConstant.list));
 			HttpSession httpSession = request.getSession(); 
 				if(map1.get(TravelConstant.userName)!=null){

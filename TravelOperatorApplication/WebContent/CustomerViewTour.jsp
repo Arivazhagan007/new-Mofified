@@ -25,11 +25,7 @@
 	<th>Action</th>
 </tr>
 <c:forEach var="tourList" items="${requestScope.list}">
-<%-- <c:url var="book" value="BookTour.jsp">
-	<c:param name="bookId" value="${tourList.tourId}"/>
-	<c:param name="bookTour" value="${tourList.amountPerPerson}"/>
-	<c:set var="tourIdValue" value="${bookId}" scope="session"/>
-</c:url> --%>
+
 	<tr>
 		<%-- <td>${tourList.tourId}</td> --%>
 		<td>${tourList.tourCode}</td>
