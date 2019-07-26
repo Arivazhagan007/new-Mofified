@@ -11,6 +11,9 @@
 <link type="text/css" rel="stylesheet" href="style/bg.css">
 </head>
 <body class="homeBackgroundPic">
+<c:if test="${sessionScope.userName==null}"> 
+<c:redirect url="CustomerLoginView.action"/> 
+</c:if>
 
 	<div>
 		<jsp:include page="Header.jsp"/>
@@ -19,11 +22,13 @@
 	<div>
 		<jsp:include page="CustomerNavigation.jsp"/>
 	</div>
-	<div >
+	<div>
 		<jsp:include page="CustomerViewTour.jsp"/>
 	</div>
 	<div class="footerMarginPosition">
 		 <jsp:include page="Footer.jsp"/>
 	</div>
+	
+	
 </body>
 </html>

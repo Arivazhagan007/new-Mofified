@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,9 @@
 <link type="text/css" rel="stylesheet" href="style/bg.css">
 </head>
 <body>
+<c:if test="${sessionScope.userName==null}"> 
+<c:redirect url="EmployeeLoginView.action"/> 
+</c:if>
 	<div>
 		<jsp:include page="Header.jsp"/>
 	</div>

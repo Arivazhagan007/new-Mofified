@@ -11,7 +11,7 @@
 	width: 400px;
 	height: 200px;	
 	background: rgba(0,0,0,0.5);
-	margin: 15% 38% 10% 35%;
+	margin: 4% 38% 2% 35%;
 }
 
 .textclr{
@@ -52,8 +52,11 @@ tr, td, th {
   text-align: left;
 }
 table {
+
   border-collapse: collapse;
-  width: 100%;
+  width: 104%;
+  background: rgba(0,0,0,0.5);
+  color: #ffffff;	
 }
 th, td {
   padding: 6px;
@@ -61,7 +64,48 @@ th, td {
 th ,td{
 	text-align: center;
 }
-.divbgclr{
-	background: rgba(0,0,0,0.5);
-	color: #ffffff;	
+
+
+.headerLogo{
+	float: left;
+	width: 200px;
+	height: 100px;
+}
+
+.headerCenter{
+	padding-top: 0px;
+	padding-left : 40%;	
+	font-size : 40px;
+	height: 50%;
+	width: 50%;
+	color: #ffffff;
+}
+
+.headerColor{
+	background-color: rgba(0,0,0,0.5);
+	width: 101%;
+	margin-bottom: 20px;
+	
+}
+.footerText{
+	text-align: center;
+	color: #ffffff;
+}
+.footerColor{
+	background-color: rgba(0,0,0,0.5);
+}
+.footerImageLeft{
+	float: left;
+	height: 250px;
+	width: 250px;
+	padding-left: 5px;
+}
+.footerImageRight{
+	float: right;
+	height: 250px;
+	width: 250px;
+	padding-right: 5px;
+}
+.footerBookPageWidth{
+	width: 104%;
 }

@@ -9,6 +9,14 @@
 <link type="text/css" rel="stylesheet" href="style/bookTour.css">
 </head>
 <body class="background">
+<div>
+	<header>
+	<fieldset class="headerColor">
+	<a href="Home.action"><img alt="Logo" src="image/headerLogo.jpg" class="headerLogo"></a>
+	<h1 class="headerCenter">Hamster Travels</h1>
+	</fieldset>
+	</header>
+</div>
 	<div class="divbgclr">
 	<table>
 		<tr>
@@ -47,11 +55,26 @@
 					<input type="text" name="countValue" id="count" required="required" placeholder="Enter the count of Members are Comming" class="fullSize"/>
 				</div>
 				<div class="center">
-					<input type="submit" value="Book" class="buttonSize" onclick="if (!(confirm('Are you sure you want to book this Tour = ${tourName}'))) return false">
+					<input type="submit" value="Book" class="buttonSize" onclick="if (!(confirm('Are you sure you want to book this Tour ${tourName}'))) return false">
 				</div>
 		</fieldset>
 		<input type="hidden" name="selectedTourId" value="${param.bookTourId}" >
 	</form>
-	
+	<div class="footerBookPageWidth">
+		<footer class="footerColor indexpage">
+			<hr>
+				<img alt="image" src="image/icon.jpg" class="footerImageLeft">
+				<img alt="image" src="image/icon.jpg" class="footerImageRight">
+				<div class="footerText">
+					<h2>Contact Us</h2>
+					<h4>Phone Number : 04404-586978 | +91-9677368611 </h4>
+					<h4>Address      : 3/49 , Army Nagar, Chennai , Pincode - 600001</h4>
+					<h4>Email Id     : hamstertravels@gmail.com</h4>
+				</div>
+				<h5 class="footerText"> <span>&#169;</span> Copyright 2019 Hamaster.com.  All Rights Reserved.</h5>
+				<h5 class="footerText"> Developed by arivazhagan </h5>
+			<hr>
+		</footer>
+	</div>
 </body>
 </html>

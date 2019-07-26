@@ -42,7 +42,7 @@ public class TravelController extends HttpServlet {
 		ClassLoader classLoader=Thread.currentThread().getContextClassLoader();
 		inputStream = classLoader.getResourceAsStream("Command.properties");
 		properties = new Properties();
-		try {
+		try { 
 			properties.load(inputStream);	
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -73,6 +73,12 @@ public class TravelController extends HttpServlet {
 		String[] uriSplit = uriPath.split("/");
 		String reqPath = uriSplit[uriSplit.length-1];
 		boolean result = reqPath.endsWith(".in");
+		if(reqPath.equals("CustomerLoginView.action")){
+			request.getSession(false).invalidate();	
+		}
+		if(reqPath.equals("EmployeeLoginView.action")){
+			request.getSession(false).invalidate();	
+		}
 		if(result){
 			Map<String, String> map = new HashMap<>();
 			String paramValues = null;

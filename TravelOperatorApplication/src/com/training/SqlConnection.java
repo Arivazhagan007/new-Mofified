@@ -6,16 +6,10 @@ import java.sql.DriverManager;
 import java.util.Properties;
 
 public class SqlConnection {
-
 	
 public static Connection getSqlConnection(){
-		
 		Connection con =null;
-		
-		
-		
-		InputStream stream;
-		
+		InputStream stream;	
 		try {
 			ClassLoader classLoader=Thread.currentThread().getContextClassLoader();
 			stream = classLoader.getResourceAsStream("db.properties");
@@ -28,10 +22,6 @@ public static Connection getSqlConnection(){
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return con;
-		
 	}
-	
-	
 }

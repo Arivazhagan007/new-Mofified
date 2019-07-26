@@ -19,7 +19,7 @@
 		<input type="submit" value="ViewAllTour" class="fullSize2 border showList hoverColor">
 	</form>
 	
-	<form action="Logout.action"  method="post">
+	<form action="EmployeeLoginView.action"  method="post">
 		<input type="submit" value="Logout" class="fullSize1 border showList hoverColor">
 	</form>
 	<form action="AddTour.jsp"  method="post">

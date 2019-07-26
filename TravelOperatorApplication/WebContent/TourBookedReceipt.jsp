@@ -7,14 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link type="text/css" rel="stylesheet" href="style/TourBookedReceipt.css">
 <title>receipt</title>
+<!-- <script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+</script> -->
 </head>
-<body class="bookTourReciptbg">
+<body >
+
 <div>
 	<jsp:include page="Header.jsp"/>
 </div>
-<form action="Logout.action" method="post">
+<form action="CustomerLoginView.action" method="post">
 	<div class="floatLoginRight">
-		<input type="submit" value="Logout" class="btnLogoutSize">
+		<input type="submit" value="Logout" class="btnLogoutSize" >
 	</div>
 </form>
 <div>
@@ -51,7 +58,7 @@
 <div class="aligncenter">
 	<h1>Happy Journey ${name}</h1>
 </div>
-<div>
+<div class="bookReciptFooter">
 	 <jsp:include page="Footer.jsp"/>
 </div>
 </body>

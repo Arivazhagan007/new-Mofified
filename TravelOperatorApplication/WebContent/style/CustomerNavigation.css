@@ -26,6 +26,11 @@
 	height: 30px;
 	border-radius: 25px;
 }
+.viewAllTourbtn{
+	width: 90px;
+	height: 30px;
+	border-radius: 25px;
+}
 .border{
 	border: 0.5px solid #000000;
 }

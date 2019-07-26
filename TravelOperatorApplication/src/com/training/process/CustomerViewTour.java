@@ -16,25 +16,22 @@ import com.training.iface.Command;
 import com.training.iface.TravelConstant;
 import com.training.model.Tour;
 
-public class SearchTour implements Command {
+public class CustomerViewTour implements Command {
 
 	@Override
-	public Map<String, Object> execute(Map<String, String> map) {	
-		String uri = "CustomerHome.jsp";
-		Map<String, Object> map2 = new HashMap<>();
-		String source = map.get("sourcePlace");
-		String destination = map.get("destinationPlace");
-		
-		List<Tour> list = new ArrayList<>();
+	public Map<String, Object> execute(Map<String, String> map) {
 		Connection con = SqlConnection.getSqlConnection();
-		String sql = "select * from Tour where boardingPlace=? AND destinationPlace=?";
+		Map<String, Object> map2 = new HashMap<>();
+		String uri = "CustomerHome.jsp";
+		map2.put(TravelConstant.uriPath, uri);
+		List<Tour> list = new ArrayList<>();
+		String sql = "Select * from Tour";
 		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
 		try {
 			preparedStatement = con.prepareStatement(sql);
-			preparedStatement.setString(1, source);
-			preparedStatement.setString(2, destination);
-			ResultSet resultSet = preparedStatement.executeQuery();
-			while (resultSet.next()) {
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
 				int tourId = resultSet.getInt("tourId");
 				String tourCode = resultSet.getString("tourCode");
 				String tourName = resultSet.getString("tourName");
@@ -54,16 +51,17 @@ public class SearchTour implements Command {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {	
+		}finally {
 			try {
 				preparedStatement.close();
 				con.close();
+				resultSet.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		map2.put(TravelConstant.uriPath, uri);
 		map2.put(TravelConstant.list, list);
 		return map2;
 	}
+
 }
