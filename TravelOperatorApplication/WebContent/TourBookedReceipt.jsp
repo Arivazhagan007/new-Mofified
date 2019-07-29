@@ -15,7 +15,15 @@
 </script> -->
 </head>
 <body >
-
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+%>
+<c:if test="${sessionScope.userName==null}"> 
+<c:redirect url="CustomerLoginView.action"/> 
+</c:if>
 <div>
 	<jsp:include page="Header.jsp"/>
 </div>

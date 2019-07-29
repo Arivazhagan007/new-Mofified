@@ -11,6 +11,12 @@
 <link type="text/css" rel="stylesheet" href="style/bg.css">
 </head>
 <body class="homeBackgroundPic">
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+%>
 <c:if test="${sessionScope.userName==null}"> 
 <c:redirect url="CustomerLoginView.action"/> 
 </c:if>

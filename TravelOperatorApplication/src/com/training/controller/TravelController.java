@@ -9,6 +9,8 @@ import java.util.Properties;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
+
+import com.training.SqlConnection;
 import com.training.factory.Factory;
 import com.training.iface.Command;
 import com.training.iface.TravelConstant;
@@ -42,6 +44,7 @@ public class TravelController extends HttpServlet {
 		ClassLoader classLoader=Thread.currentThread().getContextClassLoader();
 		inputStream = classLoader.getResourceAsStream("Command.properties");
 		properties = new Properties();
+		SqlConnection.getSqlConnection();
 		try { 
 			properties.load(inputStream);	
 		} catch (Exception e) {

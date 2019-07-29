@@ -8,11 +8,8 @@
 <title>Customer Navigation</title>
 <link type="text/css" rel="stylesheet" href="style/CustomerNavigation.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
-
-
 <div class="floatRight">
 		<c:set var="name" value="${sessionScope.userName}" scope="session"/>
 		<c:out value="Welcome ${name}"/>
@@ -23,18 +20,12 @@
 		<input type="text" name="destinationPlace" id="destinationPlace" required="required" placeholder="Enter the Tour Ending place" class="enterSize border TextColor bgcolor">
 		<button type="submit" class="searchbtn border bgcolor"><i class="fa fa-search"></i></button>
 	</form>
-	
-
-
 	<form action="CustomerLoginView.action" method="post">
 		<a class="floatRight"><button type="submit" class="loginbtn bgcolor">Logout</button></a>
 	</form>
 	<form action="CustomerViewTour.in" method="post">
 		<input type="submit" value="ViewAllTour" class="viewAllTourbtn bgcolor">
 	</form>
-
 </div>
-
-
 </body>
 </html>
