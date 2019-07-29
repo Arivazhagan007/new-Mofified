@@ -1,0 +1,27 @@
+create database TravelOperator;
+
+create table Customer(customerId int(11) PRIMARY KEY AUTO_INCREMENT,customerName varchar(30),phoneNumber bigint(10),userName varchar(25),passWord varchar(25));
+
+create table Employee(employeeId int(11)PRIMARY KEY AUTO_INCREMENT,employeeName varchar(25),phoneNumber bigint(10),userName varchar(25),passWord varchar(25));
+
+create table Tour(tourId int(11) PRIMARY KEY AUTO_INCREMENT,tourCode varchar(25),tourName varchar(25),boardingPlace varchar(25),destinationPlace varchar(25),startingDate date,endingDate date,placesCovered longtext,amountPerPerson double,employeeId int(11),FOREIGN KEY(employeeId) REFERENCES Employee(employeeId));
+
+create table BookTour(bookTourId int(11) PRIMARY KEY AUTO_INCREMENT,tourIdRef int(11),customerIdRef int(11),countOfMembers int(11),totalAmount double,FOREIGN KEY(tourIdRef) REFERENCES Tour(tourId),FOREIGN KEY(customerIdRef) REFERENCES Customer(customerId));
+
+
+mysql> alter table Customer drop PRIMARY KEY, ADD PRIMARY KEY(customerId,userNam
+e);
+Query OK, 0 rows affected (1.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Customer;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| customerId   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| customerName | varchar(30) | YES  |     | NULL    |                |
+| phoneNumber  | bigint(10)  | YES  |     | NULL    |                |
+| userName     | varchar(25) | NO   | PRI | NULL    |                |
+| passWord     | varchar(25) | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
